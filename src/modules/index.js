@@ -31,7 +31,7 @@ export default preloadedState => {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept("./", () => {
       const nextReducer = combineReducers({
-        ...require("./runtime/reducer"),
+        ...require("./reducers"),
         router: routerReducer
       })
       store.replaceReducer(nextReducer)

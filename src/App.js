@@ -4,6 +4,7 @@ import { push } from "react-router-redux"
 import { withRouter } from "react-router-dom"
 import HeaderBar from "./components/Header/HeaderBar"
 import Navigation from "./components/Header/Navigation"
+import AppRouter from "./routes"
 
 @withRouter
 @connect(
@@ -17,7 +18,9 @@ class App extends React.Component {
         <HeaderBar push={this.props.push} />
         <div className="app">
           <Navigation push={this.props.push} pathname={this.props.pathname} />
-          <main>{this.props.children}</main>
+          <main>
+            <AppRouter store={this.props.store} />
+          </main>
         </div>
       </React.Fragment>
     )

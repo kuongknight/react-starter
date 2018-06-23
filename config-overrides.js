@@ -1,4 +1,5 @@
 const _ = require("lodash")
+const rewireReactHotLoader = require("react-app-rewire-hot-loader")
 
 /* config-overrides.js */
 module.exports = {
@@ -24,6 +25,6 @@ module.exports = {
         require.resolve("sass-loader")
       ]
     })
-    return config
+    return rewireReactHotLoader(config, env)
   }
 }
